@@ -1,0 +1,64 @@
+.home-hero {
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    scroll-snap-align: start;
+  }
+  
+  .home-overlay {
+    height: 100%;
+    width: 100%;
+  /*  background-color: rgba(0, 0, 0, 0.45); /* Dark transparent overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home-content {
+    text-align: center;
+    color: black;
+    z-index: 2;
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif; 
+  }
+  
+  .home-content p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0.4rem 0;
+    font-family: 'Georgia', serif;
+  }
+  
+  .scroll-indicator {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    z-index: 2;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(8px);
+    }
+  }
+  

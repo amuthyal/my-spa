@@ -1,0 +1,159 @@
+/* Base header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: white;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .header.transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0;
+    cursor: pointer;
+  }
+  
+  /* Nav links (desktop) */
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding-bottom: 6px; /* adds a little spacing between text and line */
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    font-weight: 600;
+    color: black;
+    border-bottom: 2px solid black; /* ✅ underline active item */
+  }
+  
+  .nav-index {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: black;
+    margin-right: 0.4rem;
+  }
+  
+  .resume-button {
+    border: 1px solid black;
+    color: black;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: monospace;
+    transition: all 0.3s ease;
+  }
+
+  
+  /* Hamburger icon (mobile only) */
+  .hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+  /* Mobile menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #111;
+    color: white;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .mobile-title {
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+  
+  .mobile-links {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .mobile-links li {
+    margin: 1.2rem 0;
+  }
+  
+  .mobile-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: monospace;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-links .resume-button {
+    border: 1px solid white;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-links .resume-button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Responsive: Hide desktop nav & show hamburger */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  

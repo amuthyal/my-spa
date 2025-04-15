@@ -1,0 +1,174 @@
+.fieldwork-section {
+    width: 100vw;
+    padding: 4rem 2rem;
+    background: #fdfdfd;
+    font-family: 'Georgia', serif;
+    max-width: 1000px;          /* Set a maximum width */
+    margin: 0 auto; 
+  color: #222;
+  }
+  
+  .fieldwork-heading {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #111;
+    font-family: 'Georgia', serif;
+    margin-bottom: 0.5rem; /* 👈 Add this line for spacing */
+  }
+  
+  .fieldwork-subheading {
+    text-align: center;
+    color: #555;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+    font-style: italic;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+  
+  .accordion {
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .accordion-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .accordion-header {
+    width: 100%;
+    padding: 1.2rem;
+    text-align: left;
+    background: #efefef;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .accordion-content {
+    padding: 1rem 1.2rem;
+    background: #fff;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  .image-gallery {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+  }
+  
+  .field-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .field-image:hover {
+    transform: scale(1.02);
+  }
+  
+  
+  .arrow {
+    font-size: 1.1rem;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+  }
+  
+  .modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    cursor: auto;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .fieldwork-section {
+      padding: 2rem 1rem;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  
+    .fieldwork-heading {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+  
+    .fieldwork-subheading {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+  
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .accordion-header {
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+  
+    .accordion-content {
+      padding: 0.8rem 1rem;
+      font-size: 0.95rem;
+    }
+  
+    .image-gallery {
+      grid-template-columns: 1fr; /* stack images */
+      gap: 12px;
+    }
+  
+    .field-image {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+    }
+  
+    .modal-image {
+      max-width: 95%;
+      max-height: 80%;
+    }
+  }
+  

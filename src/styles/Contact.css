@@ -1,0 +1,74 @@
+.contact-section {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 4rem 2rem;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact-subtitle {
+    color: #333;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-text {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: #333;
+  }
+  
+  .say-hello-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid black;
+    color: black;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    will-change: transform;
+  }
+  
+  .say-hello-button:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .social-icons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .social-icons a {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: black;
+    transition: all 0.3s ease;
+    will-change: transform;
+  }
+  
+  .social-icons a:hover {
+    background-color: black;
+    color: white;
+  }
+  

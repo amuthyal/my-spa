@@ -1,0 +1,49 @@
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* Matches header height */
+}
+
+body, html, #root, .App {
+  font-family: var(--font-sans);
+  height: 100%;
+  background: #fff;
+  color: #111;
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.full-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6rem 2rem 4rem; /* top padding accounts for header */
+  min-height: 100vh; 
+}
+
+
+
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+#home.full-section {
+  padding: 0;
+  overflow: hidden;
+}

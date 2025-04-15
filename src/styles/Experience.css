@@ -1,0 +1,58 @@
+.experience-wrapper {
+    display: flex;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    flex-wrap: wrap;
+  }
+  
+  .experience-label {
+    min-width: 160px;
+    font-weight: 700;
+    color: #1e40af; /* blue-800 */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-right: 2rem;
+  }
+  
+  .experience-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .experience-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .experience-role {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+  }
+  
+  .experience-org {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #111;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .experience-wrapper {
+      flex-direction: column;
+    }
+  
+    .experience-label {
+      margin-bottom: 2rem;
+    }
+  }
+  
