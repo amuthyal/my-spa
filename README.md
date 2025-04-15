@@ -28,7 +28,45 @@ Built with React, the site features fullscreen scroll-based sections, a mobile-f
 
 ## 📁 Folder Structure
 
-my-portfolio/ ├── public/ │ └── index.html ├── src/ │ ├── components/ │ │ ├── Header.js │ │ ├── Home.js │ │ ├── About.js │ │ ├── Fieldwork.js │ │ ├── Contact.js │ ├── styles/ │ │ ├── Header.css │ │ ├── Home.css │ │ ├── About.css │ │ ├── Fieldwork.css │ │ ├── Contact.css │ ├── App.js │ └── index.js
+my-portfolio/
+├── public/
+│   ├── favicon.ico
+│   ├── logo.png               # Optional: logo used in tab or header
+│   └── index.html             # Main HTML template
+│
+├── src/
+│   ├── assets/                # Static files like images, fonts
+│   │   ├── profile.jpg
+│   │   ├── antarctica1.jpg
+│   │   └── ...
+│   │
+│   ├── components/            # Reusable React components
+│   │   ├── Header.js
+│   │   ├── Home.js
+│   │   ├── About.js
+│   │   ├── Fieldwork.js
+│   │   ├── Contact.js
+│   │   └── ...                # Add more sections as needed
+│   │
+│   ├── styles/                # Component-specific or global CSS
+│   │   ├── Header.css
+│   │   ├── Home.css
+│   │   ├── About.css
+│   │   ├── Fieldwork.css
+│   │   ├── Contact.css
+│   │   └── App.css      # (optional) Global style variables
+│   │
+│   ├── utils/                 # (optional) Helper functions/constants
+│   │   └── scrollUtils.js
+│   │
+│   ├── App.js                 # Main app layout
+│   └── index.js               # React DOM render entry point
+│
+├── .gitignore
+├── package.json
+├── README.md
+└── vite.config.js or webpack.config.js (depending on build setup)
+
 
 
 ---
