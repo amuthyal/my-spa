@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/my-spa/static/css/main.42189015.css",
+    "main.js": "/my-spa/static/js/main.93a26d40.js",
+    "static/media/greenland5.jpg": "/my-spa/static/media/greenland5.91247f1e094ffefc8392.jpg",
+    "static/media/greenland12.jpg": "/my-spa/static/media/greenland12.4b0231b01be72356299b.jpg",
+    "static/media/antarctica5.jpg": "/my-spa/static/media/antarctica5.dc1d7ff0677d94a81b49.jpg",
+    "static/media/adirondacks1.jpg": "/my-spa/static/media/adirondacks1.e59ec3a5e194be873dc2.jpg",
+    "static/media/greenland1.jpg": "/my-spa/static/media/greenland1.80f82487a69e0342c373.jpg",
+    "static/media/greenland14.jpg": "/my-spa/static/media/greenland14.9f60210b69e7bcd11e66.jpg",
+    "static/media/greenland6.jpg": "/my-spa/static/media/greenland6.ea56ea4df675a0fce9ea.jpg",
+    "static/media/greenland7.jpg": "/my-spa/static/media/greenland7.c53f25b912838b03c3a5.jpg",
+    "static/media/antarctica2.jpg": "/my-spa/static/media/antarctica2.b2de1a90401779be9f75.jpg",
+    "static/media/alaska1.jpg": "/my-spa/static/media/alaska1.0b5a89da1f674326ae85.jpg",
+    "static/media/antarctica1.jpg": "/my-spa/static/media/antarctica1.0b5a89da1f674326ae85.jpg",
+    "static/media/greenland13.jpg": "/my-spa/static/media/greenland13.abce28cd234468dac86d.jpg",
+    "static/media/greenland2.jpg": "/my-spa/static/media/greenland2.620de849fd38cf0549d5.jpg",
+    "static/media/adirondacks2.jpg": "/my-spa/static/media/adirondacks2.19daa4da867b83e1245b.jpg",
+    "static/media/greenland15.jpg": "/my-spa/static/media/greenland15.4773e8bd337d510d4662.jpg",
+    "static/media/greenland11.jpg": "/my-spa/static/media/greenland11.1c31be84252575b42f86.jpg",
+    "static/media/greenland16.jpg": "/my-spa/static/media/greenland16.af6212d789c6e331c769.jpg",
+    "static/media/antarctica3.jpg": "/my-spa/static/media/antarctica3.7bd0bbce5c11e36a3f2d.jpg",
+    "static/media/antarctica4.jpg": "/my-spa/static/media/antarctica4.875583264089d1f66bf4.jpg",
+    "static/media/greenland10.jpg": "/my-spa/static/media/greenland10.0ece2026c6c21778c51f.jpg",
+    "static/media/greenland3.jpg": "/my-spa/static/media/greenland3.8829ff621fd2d9232a1b.jpg",
+    "static/media/greenland8.jpg": "/my-spa/static/media/greenland8.a8382efb8d8645d253f3.jpg",
+    "static/media/montclair1.jpg": "/my-spa/static/media/montclair1.8165b001660e1e201328.jpg",
+    "static/media/greenland4.jpg": "/my-spa/static/media/greenland4.201b26a928d4b8c41c58.jpg",
+    "static/media/profile.png": "/my-spa/static/media/profile.04aaa99065b18ff2cd06.png",
+    "static/media/IMG_E2226.jpeg": "/my-spa/static/media/IMG_E2226.646f6e0e82f2c16532ab.jpeg",
+    "static/media/greenland9.jpg": "/my-spa/static/media/greenland9.0ececa59d72e711ac37f.jpg",
+    "index.html": "/my-spa/index.html",
+    "main.42189015.css.map": "/my-spa/static/css/main.42189015.css.map",
+    "main.93a26d40.js.map": "/my-spa/static/js/main.93a26d40.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42189015.css",
+    "static/js/main.93a26d40.js"
+  ]
+}
