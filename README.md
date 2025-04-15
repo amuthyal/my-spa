@@ -5,7 +5,7 @@ A clean, modern, responsive portfolio built with **React** and **custom CSS**, d
 
 ## 🚀 Live Site
 
-[View on GitHub Pages](https://amuthyal.github.io/my-spa)
+(https://amuthyal.github.io/my-spa)
 
 ---
 
