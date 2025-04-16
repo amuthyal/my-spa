@@ -7,6 +7,7 @@ import Fieldwork from './components/Fieldwork';
 import Research from './components/Research';
 import Contact from './components/Contact';
 import Loader from './components/Loader';
+import Travel from './components/Travel';
 import './styles/App.css';
 
 function App() {
@@ -42,9 +43,11 @@ function App() {
         <section id="about" className="full-section"><About /></section>
         <section id="experience" className="full-section"><Experience /></section>
         <section id="fieldwork" className="full-section"><Fieldwork /></section>
+        <section id="travel" className="full-section"><Travel /></section>
         <section id="contact" className="full-section"><Contact /></section>
 
       </main>
+
     </div>
   );
 }

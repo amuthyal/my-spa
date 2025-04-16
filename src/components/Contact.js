@@ -53,6 +53,10 @@ const Contact = () => {
           </motion.a>
         ))}
       </div>
+
+      <p className="copyright">
+        © {new Date().getFullYear()} Rohi Muthyala. All content and images are copyrighted and may not be used without permission.
+      </p>
     </motion.section>
   );
 };

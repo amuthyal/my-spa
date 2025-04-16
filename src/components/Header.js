@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import RMLogo from "./RMLogo";
 import '../styles/Header.css';
 
-const sections = ['about', 'experience', 'fieldwork', 'research', 'contact'];
+const sections = ['about', 'experience', 'fieldwork', 'research', 'travel','contact'];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
