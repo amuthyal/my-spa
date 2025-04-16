@@ -119,7 +119,11 @@ Akhila Muthyala for Rohi Muthyala
 
 LinkedIn • Instagram • GitHub
 
-📄 License
+## 📜 License & Copyright
 
-This project is open-source and available under the MIT License.
+© 2024–2025 Rohi Muthyala. All rights reserved.
+
+All content, designs, and images used in this project are the property of **Rohi Muthyala** and may not be reproduced, distributed, or used without explicit permission.
+.
+
 
