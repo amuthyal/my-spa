@@ -1,8 +1,27 @@
 import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 import '../styles/Home.css';
-import bgImage from '../assets/IMG_E2226.jpeg'; // Used in CSS background
+
+const GET_HOME = gql`
+  query GetHome {
+    getHome {
+      name
+      title
+      organization
+      affiliation
+      backgroundImage
+    }
+  }
+`;
 
 const Home = () => {
+  const { loading, error, data } = useQuery(GET_HOME);
+
+  if (loading) return <p className="home-loading">Loading...</p>;
+  if (error) return <p className="home-error">Error loading home content.</p>;
+
+  const { name, title, organization, affiliation, backgroundImage } = data.getHome;
+
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
@@ -11,13 +30,13 @@ const Home = () => {
   };
 
   return (
-    <div className="home-hero" style={{ backgroundImage: `url(${bgImage})` }}>
+    <div className="home-hero" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="home-overlay">
         <div className="home-content">
-          <h1>Rohi Muthyala, Ph.D</h1>
-          <p>Glacial Hydrologist</p>
-          <p>Lamont-Doherty Earth Observatory</p>
-          <p>Columbia University</p>
+          <h1>{name}</h1>
+          <p>{title}</p>
+          <p>{organization}</p>
+          <p>{affiliation}</p>
         </div>
         <div className="scroll-indicator" onClick={scrollToAbout}>
           ⌄

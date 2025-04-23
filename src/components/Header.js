@@ -1,15 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import { useQuery, gql } from '@apollo/client';
 import RMLogo from "./RMLogo";
 import '../styles/Header.css';
 
-const sections = ['about', 'experience', 'fieldwork', 'research', 'travel','contact'];
+const GET_HEADER_CONFIG = gql`
+  query GetHeaderConfig {
+    getHeaderConfig {
+      siteTitle
+      sections
+      resumeUrl
+    }
+  }
+`;
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState('');
   const [atTop, setAtTop] = useState(true);
 
+  const { loading, error, data } = useQuery(GET_HEADER_CONFIG);
+
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
+  const scrollToHome = () => {
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+      homeSection.scrollIntoView({ behavior: 'smooth' });
+      setMenuOpen(false);
+    }
+  };
+
+  // Setup section observer logic after data is loaded
   useEffect(() => {
+    if (!data) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,7 +45,7 @@ const Header = () => {
       { threshold: 0.3 }
     );
 
-    sections.forEach((id) => {
+    data.getHeaderConfig.sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -40,17 +64,11 @@ const Header = () => {
       observer.disconnect();
       homeObserver.disconnect();
     };
-  }, []);
+  }, [data]);
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  if (loading || error || !data) return null;
 
-  const scrollToHome = () => {
-    const homeSection = document.getElementById('home');
-    if (homeSection) {
-      homeSection.scrollIntoView({ behavior: 'smooth' });
-      setMenuOpen(false);
-    }
-  };
+  const { siteTitle, sections, resumeUrl } = data.getHeaderConfig;
 
   return (
     <>
@@ -73,7 +91,7 @@ const Header = () => {
             ))}
             <li>
               <a
-                href="/resume.pdf" // Replace with your actual resume path or URL
+                href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="resume-button"
@@ -91,10 +109,8 @@ const Header = () => {
 
       {menuOpen && (
         <div className="mobile-menu">
-          <div className="close-icon" onClick={toggleMenu}>
-            ✕
-          </div>
-          <h2 className="mobile-title">ROHI MUTHYALA</h2>
+          <div className="close-icon" onClick={toggleMenu}>✕</div>
+          <h2 className="mobile-title">{siteTitle}</h2>
           <ul className="mobile-links">
             {sections.map((section) => (
               <li key={section}>
@@ -105,7 +121,7 @@ const Header = () => {
             ))}
             <li>
               <a
-                href="/resume.pdf"
+                href={resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="resume-button"

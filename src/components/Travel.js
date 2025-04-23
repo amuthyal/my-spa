@@ -1,41 +1,60 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import '../styles/Travel.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import images from '../assets/travel/images'; // <-- preloaded image array
+import { useQuery, gql } from '@apollo/client';
+
+const GET_TRAVEL_IMAGES = gql`
+  query GetTravelImages {
+    getTravelImages {
+      url
+    }
+  }
+`;
 
 const Travel = () => {
+  const { loading, error, data } = useQuery(GET_TRAVEL_IMAGES);
   const [index, setIndex] = useState(0);
   const [showGallery, setShowGallery] = useState(false);
   const [overlayIndex, setOverlayIndex] = useState(null);
 
+  const images = data?.getTravelImages?.map((img) => img.url) || [];
+
   const next = () => setIndex((prev) => (prev + 1) % images.length);
   const prev = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
-  // Auto-slide every 4 seconds
+  // Auto-slide
   useEffect(() => {
+    if (images.length === 0) return;
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
-  // Keyboard controls in overlay
-  const handleKeyDown = useCallback((e) => {
-    if (overlayIndex !== null) {
-      if (e.key === 'ArrowRight') {
-        setOverlayIndex((prev) => (prev + 1) % images.length);
-      } else if (e.key === 'ArrowLeft') {
-        setOverlayIndex((prev) => (prev - 1 + images.length) % images.length);
-      } else if (e.key === 'Escape') {
-        setOverlayIndex(null);
+  // Keyboard controls for overlay
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (overlayIndex !== null) {
+        if (e.key === 'ArrowRight') {
+          setOverlayIndex((prev) => (prev + 1) % images.length);
+        } else if (e.key === 'ArrowLeft') {
+          setOverlayIndex((prev) => (prev - 1 + images.length) % images.length);
+        } else if (e.key === 'Escape') {
+          setOverlayIndex(null);
+        }
       }
-    }
-  }, [overlayIndex]);
+    },
+    [overlayIndex, images.length]
+  );
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
+
+  if (loading) return <p className="travel-loading">Loading travel images...</p>;
+  if (error) return <p className="travel-error">Error loading travel images.</p>;
+  if (images.length === 0) return <p className="travel-empty">No images available.</p>;
 
   return (
     <section id="travel" className="travel-section">
@@ -66,12 +85,10 @@ const Travel = () => {
         ))}
       </div>
 
-      {/* Show All / Hide Gallery */}
       <button className="show-gallery-button" onClick={() => setShowGallery(!showGallery)}>
         {showGallery ? 'Hide Gallery' : 'Show All'}
       </button>
 
-      {/* Gallery Grid */}
       {showGallery && (
         <div className="gallery-grid">
           {images.map((src, i) => (
@@ -86,10 +103,14 @@ const Travel = () => {
         </div>
       )}
 
-      {/* Image Overlay */}
       {overlayIndex !== null && (
         <div className="overlay" onClick={() => setOverlayIndex(null)}>
-          <img src={images[overlayIndex]} alt="Large View" className="overlay-image" />
+          <img
+            src={images[overlayIndex]}
+            alt="Large View"
+            className="overlay-image"
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       )}
     </section>
